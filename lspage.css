@@ -1,66 +1,206 @@
+:root {
+    --primary-color: #ff7a3c;
+    --text-dark: #333;
+    --text-light: #999;
+    --shadow: 0 0 8px rgb(198, 198, 198);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
-    justify-content: center;  
-    align-items: center;      
-    height: 100vh;            
-    margin: 0;                
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(135deg, rgba(255, 122, 60, 0.1) 0%, rgba(255, 122, 60, 0.05) 100%);
+    padding: 1rem;
 }
 
-.btn3{
-    padding: 0.3rem 7rem;
-    border:0.1rem;
-    border-radius: .3rem;;
-    background-color: #ff7a3c;
-    color: white;
-}
-.lh2{
-    padding-bottom: 1rem;
-}
-.login{
-    width: auto;
-    padding:2rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    box-shadow: 0 0 8px rgb(198, 198, 198);
-}
-
-.logologin{
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgb(255, 131, 74);
-    text-decoration:none;
+.login-container {
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    padding-bottom:3rem;
 }
-.login-container{
-    text-align: center; 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.input{
-    padding: 0.3rem 1.2rem;
-}
-.lh2{
-    text-align: left;
-    padding-left: 1rem;
-}
-.text-color {
-    color: #ff7a3c;
-    text-decoration: none;
-}
-p{
-    font-size: 0.9rem;
-    color:grey;
-}
-.signin{
-    width: auto;
-    padding:2rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    box-shadow: 0 0 8px rgb(198, 198, 198);
 
+.logologin {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: 0.3s;
 }
-.inputs{
-    padding: 0.3rem 1.2rem;
-    margin-bottom: .5rem;
+
+.logologin:hover {
+    transform: scale(1.05);
+}
+
+.login,
+.signin {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.lh2 {
+    text-align: left;
+    padding: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input,
+.inputs {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.input:focus,
+.inputs:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 122, 60, 0.1);
+}
+
+.btn3 {
+    padding: 0.75rem 2rem;
+    margin: 1.5rem 0 1rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn3:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 122, 60, 0.3);
+}
+
+.btn3:active {
+    transform: translateY(0);
+}
+
+p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+p input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.text-color {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.text-color:hover {
+    text-decoration: underline;
+}
+
+/* TABLET (640px and up) */
+@media (min-width: 640px) {
+    body {
+        padding: 2rem;
+    }
+
+    .login-container {
+        max-width: 450px;
+    }
+
+    .logologin {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .login,
+    .signin {
+        padding: 3rem 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .lh2 {
+        font-size: 1.8rem;
+        padding: 0 0 2rem 0;
+    }
+
+    .input,
+    .inputs {
+        padding: 0.85rem 1.2rem;
+        margin-bottom: 1.2rem;
+        border-radius: 0.7rem;
+        font-size: 1.05rem;
+    }
+
+    .btn3 {
+        padding: 0.85rem 3rem;
+        font-size: 1.05rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* DESKTOP (1024px and up) */
+@media (min-width: 1024px) {
+    .login-container {
+        max-width: 500px;
+    }
+
+    .logologin {
+        font-size: 2.2rem;
+    }
+
+    .login,
+    .signin {
+        padding: 3.5rem 3rem;
+    }
+
+    .lh2 {
+        font-size: 2rem;
+        padding: 0 0 2.5rem 1rem;
+    }
+
+    .input,
+    .inputs {
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .btn3 {
+        padding: 1rem 4rem;
+        font-size: 1.1rem;
+    }
 }
