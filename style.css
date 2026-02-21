@@ -425,7 +425,7 @@ footer {
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
 /* TABLET (640px and up) */
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     body {
         padding: 0 2rem;
     }
